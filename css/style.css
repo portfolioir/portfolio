@@ -197,6 +197,10 @@ main.mainwork > section > div.box div.item > p{
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
     }
+
+    main.mainwork > section.movie > div.box div.item {
+        aspect-ratio: 3/4.5 !important;
+    }
 }
 
 /* --------------------------------------- */
