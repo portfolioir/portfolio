@@ -155,10 +155,10 @@ main.mainwork > section > div.box{
     display: grid;
 }
 
-            section.graphic > div.box{
-                grid-template-columns: 1fr 1fr 1fr;
-                gap: 2rem 2rem;
-            }
+main.mainwork > section > div.box{
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
 
 main.mainwork > section > div.box div.item{
     width: 100%;
@@ -171,7 +171,8 @@ main.mainwork > section > div.box div.item{
     align-items: center;
 }
 
-main.mainwork > section > div.box div.item img{
+main.mainwork > section > div.box div.item img,
+main.mainwork > section > div.box div.item iframe{
     width: 100%;
     height: 100%;
     position: relative;
@@ -194,10 +195,7 @@ main.mainwork > section > div.box div.item > p{
 @media screen and (max-width: 768px){
     main.mainwork > section > div.box{
         grid-template-columns: 1fr 1fr;
-    }
-
-    section.graphic > div.box{
-        gap: 1rem 1rem;
+        gap: 1rem;
     }
 }
 
