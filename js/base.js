@@ -31,25 +31,19 @@ items.forEach(item => {
 
 	item.addEventListener('click', () => {
 
-		// クリックされたitemを複製
 		const popupItem = item.cloneNode(true);
 
-		// ポップアップ用の親要素を作成
 		const popup = document.createElement('div');
 		popup.classList.add('item-popup');
 
-		// itemを入れる
 		popup.appendChild(popupItem);
 
-		// bodyに追加
 		document.body.appendChild(popup);
 
-		// 少し遅らせて表示
 		requestAnimationFrame(() => {
 			popup.classList.add('is-active');
 		});
 
-		// 背景クリックで閉じる
 		popup.addEventListener('click', (e) => {
 
 		if (
@@ -67,4 +61,45 @@ items.forEach(item => {
 
 	});
 
+});
+
+
+
+// ボタン
+
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.btn > span');
+
+    const contents = {
+        graphic: document.querySelector('.graphic'),
+        web: document.querySelector('.web'),
+        movie: document.querySelector('.movie')
+    };
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+
+            // すべてのコンテンツを非表示
+            Object.values(contents).forEach(content => {
+                content.style.display = 'none';
+            });
+
+            // すべてのボタンの選択状態を解除
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // クリックしたボタンに対応するコンテンツを表示
+            if (button.classList.contains('btn_graphic')) {
+                contents.graphic.style.display = 'block';
+            } else if (button.classList.contains('btn_web')) {
+                contents.web.style.display = 'block';
+            } else if (button.classList.contains('btn_movie')) {
+                contents.movie.style.display = 'block';
+            }
+
+            // クリックしたボタンを選択状態にする
+            button.classList.add('active');
+        });
+    });
 });
