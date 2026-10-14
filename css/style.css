@@ -384,5 +384,5 @@ main.mainwork > section > div.box div.item > p{
     width: 90%;
 }
 .is-active .pup.goods img:nth-child(n+2){
-    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
