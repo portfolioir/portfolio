@@ -375,3 +375,14 @@ main.mainwork > section > div.box div.item > p{
 .is-active .pup{
     display: block !important;
 }
+
+.is-active .thum{
+    display: none !important;
+}
+
+.is-active .pup.goods img{
+    width: 90%;
+}
+.is-active .pup.goods img:nth-child(n+2){
+    margin-bottom: 1rem;
+}
