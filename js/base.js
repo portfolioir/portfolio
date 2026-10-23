@@ -29,43 +29,57 @@ const items = document.querySelectorAll('section.graphic .box .item');
 
 items.forEach(item => {
 
-	item.addEventListener('click', () => {
+    item.addEventListener('click', () => {
 
-		const popupItem = item.cloneNode(true);
+        // クリックしたアイテムを複製
+        const popupItem = item.cloneNode(true);
 
-		const popup = document.createElement('div');
-		popup.classList.add('item-popup');
+        // ポップアップを作成
+        const popup = document.createElement('div');
+        popup.classList.add('item-popup');
 
-		popup.appendChild(popupItem);
+        // 複製したアイテムを追加
+        popup.appendChild(popupItem);
 
-		document.body.appendChild(popup);
+        // BACK要素を作成
+        const back = document.createElement('h4');
+        back.classList.add('pup', 'back');
+        back.textContent = 'BACK';
 
-		requestAnimationFrame(() => {
-			popup.classList.add('is-active');
-		});
+        // ポップアップにBACKを追加
+        popup.appendChild(back);
 
-		popup.addEventListener('click', (e) => {
+        // bodyにポップアップを追加
+        document.body.appendChild(popup);
 
-		if (
-			e.target === popup ||
-			e.target.classList.contains('back')
-		) {
-			popup.classList.remove('is-active');
+        // 表示アニメーション
+        requestAnimationFrame(() => {
+            popup.classList.add('is-active');
+        });
 
-			setTimeout(() => {
-				popup.remove();
-			}, 300);
-		}
+        // ポップアップを閉じる処理
+        popup.addEventListener('click', (e) => {
 
-	});
+            if (
+                e.target === popup ||
+                e.target.classList.contains('back')
+            ) {
+                popup.classList.remove('is-active');
 
-	});
+                setTimeout(() => {
+                    popup.remove();
+                }, 300);
+            }
+
+        });
+
+    });
 
 });
 
 
 
-// ボタン
+// btn
 
 document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('.btn > span');

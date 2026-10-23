@@ -338,12 +338,16 @@ main.mainwork > section > div.box div.item > p{
 
 /* ポップアップされたitem */
 .item-popup .item {
-	max-width: 90%;
-	max-height: 90%;
+	width: 90%;
+    height: 90%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 
     overflow-y: auto;
-    -ms-overflow-style: none; /* IE */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
     color: #fff;
 }
@@ -360,8 +364,8 @@ main.mainwork > section > div.box div.item > p{
             text-align: center;
             line-height: 1.25;
         }
-        .item-popup .item > h4{
-            position: absolute;
+        .item-popup h4.pup.back{
+            position: fixed;
             top: .5rem;
             right: .5rem;
             cursor: pointer;
