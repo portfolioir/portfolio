@@ -377,10 +377,10 @@ main.mainwork > section > div.box div.item > p{
         }
 
 /* item内の画像 */
-.item-popup .item img {
+.item-popup .item img{
 	display: block;
-	max-width: 90%;
-	max-height: 90%;
+	max-width: 90vw;
+	max-height: 90vh;
 	width: auto;
 	height: auto;
     margin: 0 auto;
